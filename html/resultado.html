@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Score</title>
+    
+ 
+    <style>
+
+        body{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(0, 139, 139);
+        }
+        
+        h3,p{
+
+            font-family: cursive;
+            color: white;
+
+
+        }
+
+        header{
+
+            display: flex;
+
+        }
+
+        #name{
+
+            position: relative;
+            left: 15px;
+            top: 6px;
+        }
+        
+        .pontuacao{
+
+            display: flex;
+
+        }
+
+        #ponto{
+
+            position: relative;
+            left: 10px;
+            font-size: 20px;
+            top: -7px;
+        }
+
+        #situacao{
+
+            position: relative;
+            left: 0px;
+        }
+    </style>
+
+  </head>
+  <body>
+<br>
+    <header>
+    <h3>Obrigado por concluir:</h3> <p id="name"></p>
+    </header>
+    <div class="pontuacao">
+    <p id="info">Seu score foi</p> <p id="ponto"></p>
+    </div>
+
+    <div class="status">
+        <img src="" alt="" id="img">
+        <p id="situacao"></p>
+    </div>
+
+<script src="../js/Dados.js"></script>
+
+<script>
+
+document.getElementById("name").innerHTML = localStorage.nome;
+
+document.getElementById("ponto").innerHTML = localStorage.ponto;
+
+if((localStorage.ponto>=0) &&  (localStorage.ponto<=4)) {
+
+    document.getElementById("img").src = "https://media.tenor.com/FyNT-FJN0C4AAAAC/chorando-cbf.gif" 
+    document.getElementById("situacao").innerHTML = "Tem que melhorar"
+
+} else if ((localStorage.ponto>=5) &&  (localStorage.ponto<=8)) {
+    document.getElementById("img").src = "https://media.tenor.com/06_3Ly2TInQAAAAM/cr7-maybe.gif" 
+    document.getElementById("situacao").innerHTML = "Você conhece o basico"
+
+
+}else{
+
+    document.getElementById("img").src = "https://i.pinimg.com/originals/ef/44/53/ef4453ab4061e62145137a7642ec5ca7.gif" 
+    document.getElementById("situacao").innerHTML = "Minha Nossa Senhora!!!!"
+
+
+}
+
+</script>
+  </body>
+</html>
